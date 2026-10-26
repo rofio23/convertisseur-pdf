@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertisseur PDF, Word et LibreOffice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#"><span class="mark">⇄</span> Convertir</a>
+  <span class="badge">100 % dans votre navigateur</span>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Convertissez vos documents, sans rien envoyer en ligne.</h1>
+    <p>PDF, Word et LibreOffice : choisissez une conversion, déposez le fichier, téléchargez le résultat.</p>
+  </section>
+
+  <section class="tools" id="tools" aria-label="Choix de la conversion">
+    <button class="tool" data-mode="pdf-docx"><b>PDF → Word</b><small>.pdf vers .docx</small></button>
+    <button class="tool" data-mode="docx-pdf"><b>Word → PDF</b><small>.docx vers .pdf</small></button>
+    <button class="tool" data-mode="odt-pdf"><b>LibreOffice → PDF</b><small>.odt vers .pdf</small></button>
+    <button class="tool" data-mode="pdf-odt"><b>PDF → LibreOffice</b><small>.pdf vers .odt</small></button>
+  </section>
+
+  <section class="panel" id="panel" hidden>
+    <h2 id="panelTitle"></h2>
+    <label class="drop" id="drop" tabindex="0">
+      <input type="file" id="file" hidden>
+      <span class="drop-main" id="dropText">Déposez votre fichier ici ou cliquez pour le choisir</span>
+      <span class="drop-sub" id="dropSub"></span>
+    </label>
+    <button class="go" id="go" disabled>Convertir</button>
+    <p class="status" id="status" role="status"></p>
+    <a class="dl" id="dl" hidden>Télécharger le fichier</a>
+  </section>
+
+  <p class="note">La conversion récupère le texte, les titres et les listes. Les images, colonnes et mises en page complexes ne sont pas conservées.</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
